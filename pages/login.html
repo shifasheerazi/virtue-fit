@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In | Virtue Fit</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            fashiongold: '#D4AF37',
+            darkplum: '#120913',
+            cardplum: '#1C101E'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Flowbite CSS & JS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body class="bg-darkplum font-sans text-white min-h-screen flex flex-col justify-between">
+
+  <!-- Navigation Bar -->
+  <nav class="bg-darkplum/90 backdrop-blur-md sticky top-0 z-50 border-b border-gray-800 shadow-xl">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8">
+      <div class="flex justify-between h-20 items-center">
+        <a href="../index.html" class="flex items-center space-x-2 text-xl tracking-[0.3em] font-light uppercase text-white hover:opacity-90 transition">
+          <span class="font-bold text-fashiongold border-l-2 border-fashiongold pl-3 py-0.5 leading-none">VIRTUE</span>
+          <span class="font-extralight text-gray-300">FIT</span>
+        </a>
+        <div class="hidden md:flex items-center space-x-10 text-xs uppercase tracking-[0.2em] font-medium text-gray-300">
+          <a href="../index.html" class="hover:text-fashiongold transition">Home</a>
+          <a href="./about.html" class="hover:text-fashiongold transition">About</a>
+          <a href="./contact.html" class="hover:text-fashiongold transition">Contact</a>
+        </div>
+        <div class="hidden md:flex items-center space-x-5">
+          <a href="./login.html" class="text-xs uppercase tracking-widest text-fashiongold font-bold px-4 py-2 transition">Sign In</a>
+          <a href="./signup.html" class="px-6 py-2.5 bg-fashiongold text-black text-xs uppercase tracking-widest font-bold rounded-none border border-fashiongold hover:bg-black hover:text-fashiongold transition duration-300">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- SIGN IN SECTION -->
+  <section class="py-16 my-auto">
+    <div class="max-w-md mx-auto px-6">
+      
+      <!-- COMPONENT 1: Flowbite Card Form Container -->
+      <div class="bg-cardplum border border-gray-800 p-8 shadow-2xl relative">
+        
+        <!-- COMPONENT 2: Flowbite Alert Banner -->
+        <div id="alert-1" class="flex items-center p-3 mb-6 text-xs text-fashiongold bg-darkplum border border-gray-800" role="alert">
+          <i class="fa-solid fa-lock text-xs mr-2"></i>
+          <span class="text-[10px] uppercase tracking-wider">Encrypted Atelier Session</span>
+        </div>
+
+        <div class="text-center mb-8">
+          <p class="text-xs font-bold uppercase tracking-[0.2em] text-fashiongold mb-2">Welcome Back</p>
+          <h1 class="text-2xl font-light uppercase tracking-tight">Access Your Avatar</h1>
+        </div>
+
+        <form class="space-y-6">
+          
+          <!-- COMPONENT 3: Flowbite Floating Label Input (Email) -->
+          <div class="relative z-0 w-full mb-6 group">
+            <input type="email" name="floating_email" id="floating_email" class="block py-2.5 px-0 w-full text-xs text-white bg-transparent border-0 border-b border-gray-700 appearance-none focus:outline-none focus:ring-0 focus:border-fashiongold peer" placeholder=" " required />
+            <label for="floating_email" class="peer-focus:font-medium absolute text-xs text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-fashiongold peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 uppercase tracking-wider">Email Address</label>
+          </div>
+
+          <!-- COMPONENT 3: Flowbite Floating Label Input (Password) -->
+          <div class="relative z-0 w-full mb-6 group">
+            <input type="password" name="floating_password" id="floating_password" class="block py-2.5 px-0 w-full text-xs text-white bg-transparent border-0 border-b border-gray-700 appearance-none focus:outline-none focus:ring-0 focus:border-fashiongold peer" placeholder=" " required />
+            <label for="floating_password" class="peer-focus:font-medium absolute text-xs text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-fashiongold peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 uppercase tracking-wider">Password</label>
+          </div>
+
+          <!-- COMPONENT 4: Flowbite Remember Me Toggle / Checkbox -->
+          <div class="flex items-center justify-between text-xs">
+            <label class="inline-flex items-center cursor-pointer">
+              <input type="checkbox" value="" class="sr-only peer">
+              <div class="relative w-8 h-4 bg-darkplum border border-gray-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-fashiongold after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-darkplum"></div>
+              <span class="ms-2 text-[10px] uppercase tracking-wider text-gray-400">Remember Me</span>
+            </label>
+            <a href="#" class="text-[10px] uppercase tracking-wider text-fashiongold hover:underline">Forgot?</a>
+          </div>
+
+          <button type="submit" class="w-full py-4 bg-fashiongold text-black text-xs uppercase tracking-widest font-bold border border-fashiongold hover:bg-black hover:text-fashiongold transition duration-300 mt-4">
+            Sign In To Studio
+          </button>
+        </form>
+
+        <!-- COMPONENT 5: Navigation Redirect Link -->
+        <div class="mt-8 pt-6 border-t border-gray-800 text-center text-xs text-gray-400">
+          <span>Don't have an account? </span>
+          <a href="./signup.html" class="text-fashiongold font-bold uppercase tracking-wider hover:underline ml-1">Sign up.</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Consistent Footer -->
+  <footer class="bg-darkplum text-gray-400 py-8 border-t border-gray-900 text-center text-[10px] uppercase tracking-widest text-gray-600">
+    © 2026 Virtue Fit AI. All Rights Reserved.
+  </footer>
+
+</body>
+</html>

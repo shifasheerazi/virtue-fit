@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Virtue Fit</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            fashiongold: '#D4AF37',
+            darkplum: '#120913',
+            cardplum: '#1C101E'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Flowbite CSS & JS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body class="bg-darkplum font-sans text-white min-h-screen">
+
+  <!-- Navigation Bar -->
+  <nav class="bg-darkplum/90 backdrop-blur-md sticky top-0 z-50 border-b border-gray-800 shadow-xl">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8">
+      <div class="flex justify-between h-20 items-center">
+        <a href="../index.html" class="flex items-center space-x-2 text-xl tracking-[0.3em] font-light uppercase text-white hover:opacity-90 transition">
+          <span class="font-bold text-fashiongold border-l-2 border-fashiongold pl-3 py-0.5 leading-none">VIRTUE</span>
+          <span class="font-extralight text-gray-300">FIT</span>
+        </a>
+        <div class="hidden md:flex items-center space-x-10 text-xs uppercase tracking-[0.2em] font-medium text-gray-300">
+          <a href="../index.html" class="hover:text-fashiongold transition">Home</a>
+          <a href="./about.html" class="text-fashiongold font-bold hover:text-fashiongold transition">About</a>
+          <a href="./contact.html" class="hover:text-fashiongold transition">Contact</a>
+        </div>
+        <div class="hidden md:flex items-center space-x-5">
+          <a href="./login.html" class="text-xs uppercase tracking-widest text-gray-300 font-semibold px-4 py-2 hover:text-fashiongold transition">Sign In</a>
+          <a href="./signup.html" class="px-6 py-2.5 bg-fashiongold text-black text-xs uppercase tracking-widest font-bold rounded-none border border-fashiongold hover:bg-black hover:text-fashiongold transition duration-300">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Title Banner -->
+  <section class="py-16 border-b border-gray-800 bg-cardplum/30 text-center">
+    <p class="text-xs font-bold uppercase tracking-[0.2em] text-fashiongold mb-2">Our Identity</p>
+    <h1 class="text-4xl font-light uppercase tracking-tight">About Virtue Fit</h1>
+  </section>
+
+  <!-- ABOUT COMPONENT 1: Timeline Component -->
+  <section class="py-20 border-b border-gray-800">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-fashiongold mb-12 text-center">Evolution of Our AI Engine</h2>
+      <ol class="relative border-l border-gray-800 space-y-10">
+        <li class="ml-6">
+          <span class="absolute flex items-center justify-center w-6 h-6 bg-cardplum border border-fashiongold rounded-full -left-3 text-fashiongold text-[10px]">01</span>
+          <h3 class="text-sm uppercase font-bold text-white tracking-widest">2024 — Neural Body Mapping Concept</h3>
+          <p class="text-xs text-gray-400 mt-2 leading-relaxed">Initiated initial research into deep learning mesh extraction for converting 2D images to 3D precise body metrics.</p>
+        </li>
+        <li class="ml-6">
+          <span class="absolute flex items-center justify-center w-6 h-6 bg-cardplum border border-fashiongold rounded-full -left-3 text-fashiongold text-[10px]">02</span>
+          <h3 class="text-sm uppercase font-bold text-white tracking-widest">2025 — Real-Time Draping Engine</h3>
+          <p class="text-xs text-gray-400 mt-2 leading-relaxed">Engineered sub-second cloth physics simulation allowing instant virtual try-ons across varied fabric densities.</p>
+        </li>
+        <li class="ml-6">
+          <span class="absolute flex items-center justify-center w-6 h-6 bg-cardplum border border-fashiongold rounded-full -left-3 text-fashiongold text-[10px]">03</span>
+          <h3 class="text-sm uppercase font-bold text-white tracking-widest">2026 — Atelier Global Launch</h3>
+          <p class="text-xs text-gray-400 mt-2 leading-relaxed">Launched Virtue Fit platform globally, partnering with high fashion couture labels for 4K avatar rendering.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ABOUT COMPONENT 2: Team Section -->
+  <section class="py-20 border-b border-gray-800 bg-cardplum/20">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="text-xs font-bold uppercase tracking-[0.2em] text-fashiongold mb-2">Leadership</p>
+        <h2 class="text-3xl font-light uppercase tracking-tight">The Minds Behind The Vision</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="border border-gray-800 bg-cardplum p-6 text-center">
+          <div class="w-24 h-24 bg-darkplum border border-fashiongold mx-auto mb-4 flex items-center justify-center text-xl font-bold text-fashiongold">SS</div>
+          <h3 class="text-sm uppercase font-bold tracking-wider text-white">Shifa Sheerazi</h3>
+          <p class="text-[10px] text-fashiongold uppercase tracking-widest mt-1">Founder & Chief Architect</p>
+        </div>
+        <div class="border border-gray-800 bg-cardplum p-6 text-center">
+          <div class="w-24 h-24 bg-darkplum border border-gray-700 mx-auto mb-4 flex items-center justify-center text-xl font-bold text-gray-300">AV</div>
+          <h3 class="text-sm uppercase font-bold tracking-wider text-white">Aria Vance</h3>
+          <p class="text-[10px] text-gray-400 uppercase tracking-widest mt-1">Head of AI Research</p>
+        </div>
+        <div class="border border-gray-800 bg-cardplum p-6 text-center">
+          <div class="w-24 h-24 bg-darkplum border border-gray-700 mx-auto mb-4 flex items-center justify-center text-xl font-bold text-gray-300">MK</div>
+          <h3 class="text-sm uppercase font-bold tracking-wider text-white">Marc Kross</h3>
+          <p class="text-[10px] text-gray-400 uppercase tracking-widest mt-1">Creative Fashion Director</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT COMPONENT 3: Statistics Section -->
+  <section class="py-16 border-b border-gray-800">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="p-6 border border-gray-800 bg-cardplum">
+          <p class="text-3xl font-serif text-fashiongold font-bold">99.4%</p>
+          <p class="text-[10px] uppercase tracking-widest text-gray-400 mt-2">Drape Accuracy</p>
+        </div>
+        <div class="p-6 border border-gray-800 bg-cardplum">
+          <p class="text-3xl font-serif text-white font-bold">50K+</p>
+          <p class="text-[10px] uppercase tracking-widest text-gray-400 mt-2">Active Avatars</p>
+        </div>
+        <div class="p-6 border border-gray-800 bg-cardplum">
+          <p class="text-3xl font-serif text-fashiongold font-bold">120ms</p>
+          <p class="text-[10px] uppercase tracking-widest text-gray-400 mt-2">Render Speed</p>
+        </div>
+        <div class="p-6 border border-gray-800 bg-cardplum">
+          <p class="text-3xl font-serif text-white font-bold">15+</p>
+          <p class="text-[10px] uppercase tracking-widest text-gray-400 mt-2">Haute Couture Partners</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT COMPONENT 4: Testimonial Section -->
+  <section class="py-20 border-b border-gray-800 bg-cardplum/30">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <i class="fa-solid fa-quote-left text-3xl text-fashiongold mb-6 block"></i>
+      <p class="text-gray-300 text-base italic leading-relaxed mb-6">"Virtue Fit represents the intersection of technology and fashion design. It empowers users to preview how garments move and fit before making a purchase."</p>
+      <p class="text-xs uppercase font-bold tracking-widest text-white">Vogue Tech Review 2026</p>
+    </div>
+  </section>
+
+  <!-- ABOUT COMPONENT 5: Mission Accordion -->
+  <section class="py-20 border-b border-gray-800">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-fashiongold mb-8 text-center">Our Principles</h2>
+      <div id="about-accordion" data-accordion="collapse" class="space-y-4">
+        <div class="border border-gray-800 bg-cardplum">
+          <h2 id="about-heading-1">
+            <button type="button" class="flex justify-between items-center w-full p-5 text-left text-xs uppercase tracking-widest font-bold text-white hover:text-fashiongold" data-accordion-target="#about-body-1" aria-expanded="true">
+              <span>01. Sustainable Fashion Technology</span>
+              <i class="fa-solid fa-chevron-down text-fashiongold text-xs"></i>
+            </button>
+          </h2>
+          <div id="about-body-1" class="hidden p-5 border-t border-gray-800 text-gray-400 text-xs leading-relaxed">
+            Reducing online apparel returns and textile waste by providing exact digital sizing beforehand.
+          </div>
+        </div>
+        <div class="border border-gray-800 bg-cardplum">
+          <h2 id="about-heading-2">
+            <button type="button" class="flex justify-between items-center w-full p-5 text-left text-xs uppercase tracking-widest font-bold text-white hover:text-fashiongold" data-accordion-target="#about-body-2" aria-expanded="false">
+              <span>02. Biometric Privacy Guard</span>
+              <i class="fa-solid fa-chevron-down text-fashiongold text-xs"></i>
+            </button>
+          </h2>
+          <div id="about-body-2" class="hidden p-5 border-t border-gray-800 text-gray-400 text-xs leading-relaxed">
+            All user images and 3D avatar measurements are encrypted securely end-to-end.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Consistent Footer -->
+  <footer class="bg-darkplum text-gray-400 py-12 border-t border-gray-900 text-center text-[10px] uppercase tracking-widest text-gray-600">
+    © 2026 Virtue Fit AI. All Rights Reserved.
+  </footer>
+
+</body>
+</html>

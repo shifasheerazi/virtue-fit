@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up | Virtue Fit</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            fashiongold: '#D4AF37',
+            darkplum: '#120913',
+            cardplum: '#1C101E'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Flowbite CSS & JS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body class="bg-darkplum font-sans text-white min-h-screen flex flex-col justify-between">
+
+  <!-- Navigation Bar -->
+  <nav class="bg-darkplum/90 backdrop-blur-md sticky top-0 z-50 border-b border-gray-800 shadow-xl">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8">
+      <div class="flex justify-between h-20 items-center">
+        <a href="../index.html" class="flex items-center space-x-2 text-xl tracking-[0.3em] font-light uppercase text-white hover:opacity-90 transition">
+          <span class="font-bold text-fashiongold border-l-2 border-fashiongold pl-3 py-0.5 leading-none">VIRTUE</span>
+          <span class="font-extralight text-gray-300">FIT</span>
+        </a>
+        <div class="hidden md:flex items-center space-x-10 text-xs uppercase tracking-[0.2em] font-medium text-gray-300">
+          <a href="../index.html" class="hover:text-fashiongold transition">Home</a>
+          <a href="./about.html" class="hover:text-fashiongold transition">About</a>
+          <a href="./contact.html" class="hover:text-fashiongold transition">Contact</a>
+        </div>
+        <div class="hidden md:flex items-center space-x-5">
+          <a href="./login.html" class="text-xs uppercase tracking-widest text-gray-300 font-semibold px-4 py-2 hover:text-fashiongold transition">Sign In</a>
+          <a href="./signup.html" class="px-6 py-2.5 bg-fashiongold text-black text-xs uppercase tracking-widest font-bold rounded-none border border-fashiongold hover:bg-black hover:text-fashiongold transition duration-300">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- SIGN UP FORM SECTION -->
+  <section class="py-16 my-auto">
+    <div class="max-w-md mx-auto px-6">
+      
+      <!-- COMPONENT 1: Sign Up Form Card -->
+      <div class="bg-cardplum border border-gray-800 p-8 shadow-2xl relative">
+        <div class="text-center mb-8">
+          <p class="text-xs font-bold uppercase tracking-[0.2em] text-fashiongold mb-2">Create Account</p>
+          <h1 class="text-2xl font-light uppercase tracking-tight">Join The Atelier</h1>
+        </div>
+
+        <!-- COMPONENT 2: Social Registration Buttons -->
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <button class="flex items-center justify-center space-x-2 border border-gray-800 bg-darkplum py-3 text-xs uppercase tracking-wider hover:border-fashiongold transition">
+            <i class="fa-brands fa-google text-fashiongold"></i>
+            <span>Google</span>
+          </button>
+          <button class="flex items-center justify-center space-x-2 border border-gray-800 bg-darkplum py-3 text-xs uppercase tracking-wider hover:border-fashiongold transition">
+            <i class="fa-brands fa-apple text-fashiongold"></i>
+            <span>Apple</span>
+          </button>
+        </div>
+
+        <div class="flex items-center my-6">
+          <div class="flex-grow border-t border-gray-800"></div>
+          <span class="px-3 text-[10px] uppercase tracking-widest text-gray-500">Or Email</span>
+          <div class="flex-grow border-t border-gray-800"></div>
+        </div>
+
+        <!-- Form Fields -->
+        <form class="space-y-5">
+          
+          <!-- COMPONENT 3: Custom Inputs with Icons -->
+          <div>
+            <label class="block text-xs uppercase tracking-widest text-gray-300 font-semibold mb-2">Full Name</label>
+            <div class="relative">
+              <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500 text-xs">
+                <i class="fa-solid fa-user"></i>
+              </span>
+              <input type="text" required class="w-full bg-darkplum border border-gray-800 text-white text-xs pl-10 pr-3 py-3 focus:outline-none focus:border-fashiongold" placeholder="Jane Doe">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs uppercase tracking-widest text-gray-300 font-semibold mb-2">Email Address</label>
+            <div class="relative">
+              <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500 text-xs">
+                <i class="fa-solid fa-envelope"></i>
+              </span>
+              <input type="email" required class="w-full bg-darkplum border border-gray-800 text-white text-xs pl-10 pr-3 py-3 focus:outline-none focus:border-fashiongold" placeholder="jane@virtuefit.com">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs uppercase tracking-widest text-gray-300 font-semibold mb-2">Password</label>
+            <div class="relative">
+              <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500 text-xs">
+                <i class="fa-solid fa-lock"></i>
+              </span>
+              <input type="password" required class="w-full bg-darkplum border border-gray-800 text-white text-xs pl-10 pr-3 py-3 focus:outline-none focus:border-fashiongold" placeholder="••••••••">
+            </div>
+          </div>
+
+          <!-- COMPONENT 4: Terms Consent Checkbox Alert -->
+          <div class="flex items-start space-x-3 pt-2">
+            <input type="checkbox" required class="mt-1 bg-darkplum border-gray-800 text-fashiongold focus:ring-0">
+            <label class="text-[10px] text-gray-400 uppercase tracking-wider leading-relaxed">
+              I agree to the <a href="#" class="text-fashiongold underline">Terms of Service</a> & <a href="#" class="text-fashiongold underline">Biometric Privacy Policy</a>.
+            </label>
+          </div>
+
+          <button type="submit" class="w-full py-4 bg-fashiongold text-black text-xs uppercase tracking-widest font-bold border border-fashiongold hover:bg-black hover:text-fashiongold transition duration-300 mt-4">
+            Register Account
+          </button>
+        </form>
+
+        <!-- COMPONENT 5: Navigation Redirect Link -->
+        <div class="mt-8 pt-6 border-t border-gray-800 text-center text-xs text-gray-400">
+          <span>Already have an account? </span>
+          <a href="./login.html" class="text-fashiongold font-bold uppercase tracking-wider hover:underline ml-1">Sign in.</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Consistent Footer -->
+  <footer class="bg-darkplum text-gray-400 py-8 border-t border-gray-900 text-center text-[10px] uppercase tracking-widest text-gray-600">
+    © 2026 Virtue Fit AI. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
