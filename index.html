@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtue Fit | AI Virtual Fitting Room</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            fashiongold: '#D4AF37',
+            darkplum: '#120913',
+            cardplum: '#1C101E'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Flowbite CSS & JS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body class="bg-darkplum font-sans text-white min-h-screen">
+
+  <!-- Navigation Bar -->
+  <nav class="bg-darkplum/90 backdrop-blur-md sticky top-0 z-50 border-b border-gray-800 shadow-xl">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8">
+      <div class="flex justify-between h-20 items-center">
+        
+        <!-- Logo -->
+        <a href="./index.html" class="flex items-center space-x-2 text-xl tracking-[0.3em] font-light uppercase text-white hover:opacity-90 transition">
+          <span class="font-bold text-fashiongold border-l-2 border-fashiongold pl-3 py-0.5 leading-none">VIRTUE</span>
+          <span class="font-extralight text-gray-300">FIT</span>
+        </a>
+
+        <!-- Navigation Links -->
+        <div class="hidden md:flex items-center space-x-10 text-xs uppercase tracking-[0.2em] font-medium text-gray-300">
+          <a href="./index.html" class="text-fashiongold font-bold hover:text-fashiongold transition">Home</a>
+          <a href="./pages/about.html" class="hover:text-fashiongold transition">About</a>
+          <a href="./pages/contact.html" class="hover:text-fashiongold transition">Contact</a>
+        </div>
+
+        <!-- Auth Links -->
+        <div class="hidden md:flex items-center space-x-5">
+          <a href="./pages/login.html" class="text-xs uppercase tracking-widest text-gray-300 font-semibold px-4 py-2 hover:text-fashiongold transition">Sign In</a>
+          <a href="./pages/signup.html" class="px-6 py-2.5 bg-fashiongold text-black text-xs uppercase tracking-widest font-bold rounded-none border border-fashiongold hover:bg-black hover:text-fashiongold transition duration-300">Sign Up</a>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+ <!-- Hero Section -->
+  <section class="relative overflow-hidden py-20 lg:py-32 border-b border-gray-800">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Text Column -->
+        <div class="lg:col-span-7 space-y-8">
+          <div class="inline-flex items-center space-x-2 border border-fashiongold/40 px-3 py-1 text-xs uppercase tracking-widest text-fashiongold">
+            <span class="w-1.5 h-1.5 bg-fashiongold"></span>
+            <span>Next-Gen Virtual Fitting</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-6xl font-light tracking-tight leading-none uppercase">
+            Transform Your <br>
+            <span class="font-bold text-fashiongold italic font-serif text-5xl sm:text-7xl">Style Avatar</span>
+          </h1>
+
+          <p class="text-gray-400 text-sm sm:text-base max-w-xl font-light leading-relaxed tracking-wide">
+            Experience high fashion engineered by AI. Upload your photo, select designer apparel, and witness instant photorealistic fit analytics on your personal 3D avatar.
+          </p>
+
+          <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-5 pt-4">
+            <a href="./pages/signup.html" class="px-8 py-4 bg-fashiongold text-black text-xs uppercase tracking-widest font-bold border border-fashiongold hover:bg-black hover:text-fashiongold transition duration-300 text-center">
+              Try Virtual Fitting
+            </a>
+            <a href="./pages/about.html" class="px-8 py-4 border border-gray-700 text-white text-xs uppercase tracking-widest font-bold hover:border-fashiongold hover:text-fashiongold transition duration-300 text-center">
+              Explore Technology
+            </a>
+          </div>
+
+          <!-- Quick Metrics -->
+          <div class="grid grid-cols-3 gap-6 pt-8 border-t border-gray-800/80 max-w-lg">
+            <div>
+              <p class="text-2xl font-bold text-white">99.4%</p>
+              <p class="text-[10px] uppercase tracking-widest text-gray-500 mt-1">Fit Accuracy</p>
+            </div>
+            <div>
+              <p class="text-2xl font-bold text-white">50K+</p>
+              <p class="text-[10px] uppercase tracking-widest text-gray-500 mt-1">Avatars Created</p>
+            </div>
+            <div>
+              <p class="text-2xl font-bold text-white">Instant</p>
+              <p class="text-[10px] uppercase tracking-widest text-gray-500 mt-1">AI Rendering</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Visual Showcase Column -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative z-10 border border-gray-800 bg-cardplum p-3 shadow-2xl">
+            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1000" 
+                 alt="High Fashion Model AI Avatar" 
+                 class="w-full h-[480px] object-cover grayscale contrast-125 hover:grayscale-0 transition duration-700">
+            <div class="p-4 bg-darkplum border-t border-gray-800 flex justify-between items-center">
+              <div>
+                <p class="text-xs font-bold uppercase tracking-widest text-white">AI Outfit Simulation #084</p>
+                <p class="text-[10px] text-gray-400 uppercase tracking-wider">Haute Couture Collection</p>
+              </div>
+              <span class="text-xs font-bold text-fashiongold border border-fashiongold px-2 py-1 uppercase">Live Rendering</span>
+            </div>
+          </div>
+          <!-- Decorative Background Backdrop -->
+          <div class="absolute -bottom-6 -right-6 w-full h-full border border-fashiongold/30 -z-0 pointer-events-none"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+ <!-- COMPONENT 1: Feature Grid (How It Works) -->
+  <section class="py-20 border-b border-gray-800 bg-cardplum/30">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="text-xs font-bold uppercase tracking-[0.2em] text-fashiongold mb-2">The Process</p>
+        <h2 class="text-3xl font-light uppercase tracking-tight">How Virtue Fit Works</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="border border-gray-800 bg-cardplum p-8 relative">
+          <span class="text-3xl font-bold text-fashiongold/40 font-serif">01</span>
+          <h3 class="text-lg uppercase tracking-wider font-semibold my-4">Upload Full-Body Photo</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Upload a clear photo. Our AI maps key body points to generate your precise 3D avatar in seconds.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="border border-gray-800 bg-cardplum p-8 relative">
+          <span class="text-3xl font-bold text-fashiongold/40 font-serif">02</span>
+          <h3 class="text-lg uppercase tracking-wider font-semibold my-4">Select Designer Garments</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Choose from haute couture collections, casual wear, or upload custom clothing images.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="border border-gray-800 bg-cardplum p-8 relative">
+          <span class="text-3xl font-bold text-fashiongold/40 font-serif">03</span>
+          <h3 class="text-lg uppercase tracking-wider font-semibold my-4">Real-Time Fit Analysis</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">View photorealistic renderings showing fabric drape, tightness, and size recommendations instantly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPONENT 2: Before/After Fit Gallery -->
+  <section class="py-20 border-b border-gray-800">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[0.2em] text-fashiongold mb-2">Visual Showcase</p>
+          <h2 class="text-3xl font-light uppercase tracking-tight">AI Virtual Try-On Gallery</h2>
+        </div>
+        <p class="text-gray-400 text-sm max-w-md mt-4 md:mt-0">Compare original garment images with rendered avatar fits in high definition.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="border border-gray-800 bg-cardplum overflow-hidden group">
+          <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=800" alt="Male Model Outfit" class="w-full h-80 object-cover group-hover:scale-105 transition duration-500">
+          <div class="p-4 flex justify-between items-center border-t border-gray-800">
+            <span class="text-xs uppercase tracking-widest text-gray-300">Monochrome Blazer</span>
+            <span class="text-xs text-fashiongold font-bold">Fit Score: 98%</span>
+          </div>
+        </div>
+
+        <div class="border border-gray-800 bg-cardplum overflow-hidden group">
+          <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=800" alt="High Fashion Coat" class="w-full h-80 object-cover group-hover:scale-105 transition duration-500">
+          <div class="p-4 flex justify-between items-center border-t border-gray-800">
+            <span class="text-xs uppercase tracking-widest text-gray-300">Silk Runway Dress</span>
+            <span class="text-xs text-fashiongold font-bold">Fit Score: 99%</span>
+          </div>
+        </div>
+
+        <div class="border border-gray-800 bg-cardplum overflow-hidden group">
+          <img src="https://images.unsplash.com/photo-1488161628813-04466f872be2?auto=format&fit=crop&q=80&w=800" alt="Streetwear Fashion" class="w-full h-80 object-cover group-hover:scale-105 transition duration-500">
+          <div class="p-4 flex justify-between items-center border-t border-gray-800">
+            <span class="text-xs uppercase tracking-widest text-gray-300">Oversized Trench</span>
+            <span class="text-xs text-fashiongold font-bold">Fit Score: 96%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPONENT 3: Brand Partner Cloud -->
+  <section class="py-12 border-b border-gray-800 bg-cardplum/20">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 text-center">
+      <p class="text-xs uppercase tracking-[0.3em] text-gray-500 mb-8">Integrated With Leading Fashion Houses</p>
+      <div class="flex flex-wrap justify-center items-center gap-10 md:gap-20 opacity-60 text-lg font-serif tracking-widest uppercase">
+        <span>VOGUE</span>
+        <span>BALMAIN</span>
+        <span>PRADA</span>
+        <span>SAINT LAURENT</span>
+        <span>GUCCI</span>
+      </div>
+    </div>
+  </section>
+
+ <!-- COMPONENT 4: Pricing Pass Cards -->
+  <section class="py-20 border-b border-gray-800">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="text-xs font-bold uppercase tracking-[0.2em] text-fashiongold mb-2">Access Levels</p>
+        <h2 class="text-3xl font-light uppercase tracking-tight">Choose Your Access Pass</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <!-- Card 1 -->
+        <div class="border border-gray-800 bg-cardplum p-8 relative flex flex-col justify-between">
+          <div>
+            <h3 class="text-xl font-bold uppercase tracking-widest text-white mb-2">Standard Studio</h3>
+            <p class="text-gray-400 text-xs uppercase tracking-wider mb-6">For Individual Fashion Enthusiasts</p>
+            <p class="text-4xl font-light text-fashiongold mb-6">$0 <span class="text-xs text-gray-500 uppercase">/ Month</span></p>
+            <ul class="space-y-4 text-sm text-gray-300 mb-8 border-t border-gray-800 pt-6">
+              <li class="flex items-center"><i class="fa-solid fa-check text-fashiongold mr-3"></i> 3D Avatar Generation from 1 Photo</li>
+              <li class="flex items-center"><i class="fa-solid fa-check text-fashiongold mr-3"></i> Up to 15 Garment Try-Ons / Month</li>
+              <li class="flex items-center"><i class="fa-solid fa-check text-fashiongold mr-3"></i> Standard 1080p Image Export</li>
+            </ul>
+          </div>
+          <a href="./pages/signup.html" class="w-full py-3 border border-gray-700 text-white text-xs uppercase tracking-widest font-bold text-center block hover:border-fashiongold hover:text-fashiongold transition">Get Started</a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="border-2 border-fashiongold bg-cardplum p-8 relative flex flex-col justify-between shadow-2xl">
+          <div class="absolute -top-3 right-6 bg-fashiongold text-black text-[10px] font-bold uppercase tracking-widest px-3 py-1">Recommended</div>
+          <div>
+            <h3 class="text-xl font-bold uppercase tracking-widest text-white mb-2">Atelier VIP Pass</h3>
+            <p class="text-gray-400 text-xs uppercase tracking-wider mb-6">For Stylists & Couture Collectors</p>
+            <p class="text-4xl font-light text-fashiongold mb-6">$29 <span class="text-xs text-gray-500 uppercase">/ Month</span></p>
+            <ul class="space-y-4 text-sm text-gray-300 mb-8 border-t border-gray-800 pt-6">
+              <li class="flex items-center"><i class="fa-solid fa-check text-fashiongold mr-3"></i> Unlimited Avatar Customizations</li>
+              <li class="flex items-center"><i class="fa-solid fa-check text-fashiongold mr-3"></i> Unlimited Real-Time Try-Ons</li>
+              <li class="flex items-center"><i class="fa-solid fa-check text-fashiongold mr-3"></i> High-Precision Fabric Drape Simulation</li>
+              <li class="flex items-center"><i class="fa-solid fa-check text-fashiongold mr-3"></i> 4K Studio Quality Renderings</li>
+            </ul>
+          </div>
+          <a href="./pages/signup.html" class="w-full py-3 bg-fashiongold text-black text-xs uppercase tracking-widest font-bold text-center block hover:bg-yellow-400 transition">Unlock VIP Pass</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPONENT 5: Testimonial Grid -->
+  <section class="py-20 border-b border-gray-800 bg-cardplum/30">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <p class="text-xs font-bold uppercase tracking-[0.2em] text-fashiongold mb-2">Endorsements</p>
+        <h2 class="text-3xl font-light uppercase tracking-tight">What Industry Leaders Say</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="border border-gray-800 bg-cardplum p-8">
+          <p class="text-gray-300 text-sm italic leading-relaxed mb-6">"Virtue Fit completely transformed our personal styling workflow. The AI draping accuracy on tailored avatars is remarkably close to real physical fittings."</p>
+          <div class="flex items-center space-x-4">
+            <div class="w-10 h-10 bg-fashiongold/20 border border-fashiongold flex items-center justify-center font-bold text-fashiongold">EA</div>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-widest text-white">Elena Vance</p>
+              <p class="text-[10px] text-gray-500 uppercase tracking-wider">Senior Fashion Editor, Milan</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="border border-gray-800 bg-cardplum p-8">
+          <p class="text-gray-300 text-sm italic leading-relaxed mb-6">"The speed of real-time garment rendering is unprecedented. It eliminates the guesswork when shopping high-end collections remotely."</p>
+          <div class="flex items-center space-x-4">
+            <div class="w-10 h-10 bg-fashiongold/20 border border-fashiongold flex items-center justify-center font-bold text-fashiongold">CL</div>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-widest text-white">Camille Laurent</p>
+              <p class="text-[10px] text-gray-500 uppercase tracking-wider">Couture Stylist, Paris</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPONENT 6: FAQ Accordion -->
+  <section class="py-20 border-b border-gray-800">
+    <div class="max-w-4xl mx-auto px-6 sm:px-8">
+      <div class="text-center mb-12">
+        <p class="text-xs font-bold uppercase tracking-[0.2em] text-fashiongold mb-2">Queries</p>
+        <h2 class="text-3xl font-light uppercase tracking-tight">Frequently Asked Questions</h2>
+      </div>
+
+      <div id="faq-accordion" data-accordion="collapse" class="space-y-4">
+        <!-- FAQ Item 1 -->
+        <div class="border border-gray-800 bg-cardplum">
+          <h2 id="faq-heading-1">
+            <button type="button" class="flex justify-between items-center w-full p-5 text-left text-sm uppercase tracking-wider font-semibold text-white hover:text-fashiongold" data-accordion-target="#faq-body-1" aria-expanded="true" aria-controls="faq-body-1">
+              <span>What photo quality is required for avatar generation?</span>
+              <i class="fa-solid fa-chevron-down text-fashiongold text-xs"></i>
+            </button>
+          </h2>
+          <div id="faq-body-1" class="hidden p-5 border-t border-gray-800 text-gray-400 text-xs leading-relaxed" aria-labelledby="faq-heading-1">
+            <p>For best results, upload a well-lit full-body photograph with form-fitting clothing against a plain background. Our neural engine handles the rest.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="border border-gray-800 bg-cardplum">
+          <h2 id="faq-heading-2">
+            <button type="button" class="flex justify-between items-center w-full p-5 text-left text-sm uppercase tracking-wider font-semibold text-white hover:text-fashiongold" data-accordion-target="#faq-body-2" aria-expanded="false" aria-controls="faq-body-2">
+              <span>How accurate is the sizing recommendation?</span>
+              <i class="fa-solid fa-chevron-down text-fashiongold text-xs"></i>
+            </button>
+          </h2>
+          <div id="faq-body-2" class="hidden p-5 border-t border-gray-800 text-gray-400 text-xs leading-relaxed" aria-labelledby="faq-heading-2">
+            <p>Our algorithms calculate mesh fit precision with up to 99.4% accuracy compared to physical garment dimensions and standard size charts.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPONENT 7: CTA Banner -->
+  <section class="py-20 bg-cardplum text-center relative border-b border-gray-800">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl sm:text-5xl font-light uppercase tracking-tight mb-6">Ready to Experience Your <br><span class="text-fashiongold italic font-serif">Digital Fitting?</span></h2>
+      <p class="text-gray-400 text-sm max-w-xl mx-auto mb-8 font-light">Join thousands of stylists and fashion enthusiasts using Virtue Fit daily.</p>
+      <a href="./pages/signup.html" class="inline-block px-10 py-4 bg-fashiongold text-black text-xs uppercase tracking-widest font-bold border border-fashiongold hover:bg-black hover:text-fashiongold transition duration-300">
+        Create Your Avatar Now
+      </a>
+    </div>
+  </section>
+
+  <!-- COMPONENT 8: App Feature Highlights Badges -->
+  <section class="py-16 border-b border-gray-800 bg-darkplum">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="p-6 border border-gray-800 bg-cardplum/50">
+          <i class="fa-solid fa-wand-magic-sparkles text-2xl text-fashiongold mb-3"></i>
+          <h4 class="text-xs uppercase tracking-widest font-bold text-white">AI Mesh Fitting</h4>
+          <p class="text-[10px] text-gray-400 mt-1 uppercase tracking-wider">Sub-millimeter Drape Precision</p>
+        </div>
+        <div class="p-6 border border-gray-800 bg-cardplum/50">
+          <i class="fa-solid fa-camera text-2xl text-fashiongold mb-3"></i>
+          <h4 class="text-xs uppercase tracking-widest font-bold text-white">1-Click Photo Upload</h4>
+          <p class="text-[10px] text-gray-400 mt-1 uppercase tracking-wider">Instant 3D Avatar Creation</p>
+        </div>
+        <div class="p-6 border border-gray-800 bg-cardplum/50">
+          <i class="fa-solid fa-shield-halved text-2xl text-fashiongold mb-3"></i>
+          <h4 class="text-xs uppercase tracking-widest font-bold text-white">Biometric Vault</h4>
+          <p class="text-[10px] text-gray-400 mt-1 uppercase tracking-wider">Private & Encrypted Body Data</p>
+        </div>
+        <div class="p-6 border border-gray-800 bg-cardplum/50">
+          <i class="fa-solid fa-rotate text-2xl text-fashiongold mb-3"></i>
+          <h4 class="text-xs uppercase tracking-widest font-bold text-white">360° Real-Time View</h4>
+          <p class="text-[10px] text-gray-400 mt-1 uppercase tracking-wider">Interactive Fitting Angles</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPONENT 9: Newsletter Subscription Box -->
+  <section class="py-20 border-b border-gray-800 bg-cardplum/20">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <p class="text-xs font-bold uppercase tracking-[0.2em] text-fashiongold mb-2">Exclusives</p>
+      <h2 class="text-2xl sm:text-3xl font-light uppercase tracking-tight mb-4">Join The Virtue Fit Atelier</h2>
+      <p class="text-gray-400 text-xs tracking-wide max-w-md mx-auto mb-8">Receive early access to seasonal digital collections and exclusive AI virtual try-on drops.</p>
+      
+      <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+        <input type="email" placeholder="ENTER YOUR EMAIL ADDRESS" required class="bg-darkplum border border-gray-800 text-white text-xs px-4 py-3 focus:outline-none focus:border-fashiongold flex-1 placeholder-gray-600 tracking-widest">
+        <button type="submit" class="bg-fashiongold text-black text-xs uppercase font-bold tracking-widest px-6 py-3 hover:bg-yellow-400 transition">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- COMPONENT 10: Tech Stack Statistics Grid -->
+  <section class="py-16 border-b border-gray-800 bg-darkplum">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8">
+      <div class="flex flex-wrap justify-around items-center text-center gap-8">
+        <div>
+          <span class="text-3xl font-serif text-fashiongold font-bold">120ms</span>
+          <p class="text-[10px] uppercase tracking-widest text-gray-500 mt-1">Render Latency</p>
+        </div>
+        <div class="h-8 w-px bg-gray-800 hidden md:block"></div>
+        <div>
+          <span class="text-3xl font-serif text-white font-bold">4K HDR</span>
+          <p class="text-[10px] uppercase tracking-widest text-gray-500 mt-1">Output Resolution</p>
+        </div>
+        <div class="h-8 w-px bg-gray-800 hidden md:block"></div>
+        <div>
+          <span class="text-3xl font-serif text-fashiongold font-bold">100%</span>
+          <p class="text-[10px] uppercase tracking-widest text-gray-500 mt-1">Private Simulation</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Consistent Luxury Footer -->
+  <footer class="bg-darkplum text-gray-400 py-16 border-t border-gray-900">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div>
+        <a href="./index.html" class="flex items-center space-x-2 text-lg tracking-[0.3em] font-light uppercase text-white mb-4">
+          <span class="font-bold text-fashiongold border-l-2 border-fashiongold pl-3 py-0.5 leading-none">VIRTUE</span>
+          <span class="font-extralight text-gray-300">FIT</span>
+        </a>
+        <p class="text-xs text-gray-500 leading-relaxed font-light">The premier AI-powered virtual fitting room bringing haute couture directly to your personalized 3D avatar.</p>
+      </div>
+
+      <div>
+        <h4 class="text-xs uppercase tracking-widest text-white font-bold mb-4">Navigation</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="./index.html" class="hover:text-fashiongold transition">Home</a></li>
+          <li><a href="./pages/about.html" class="hover:text-fashiongold transition">About Us</a></li>
+          <li><a href="./pages/contact.html" class="hover:text-fashiongold transition">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-xs uppercase tracking-widest text-white font-bold mb-4">Account</h4>
+        <ul class="space-y-2 text-xs">
+          <li><a href="./pages/login.html" class="hover:text-fashiongold transition">Sign In</a></li>
+          <li><a href="./pages/signup.html" class="hover:text-fashiongold transition">Sign Up</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-xs uppercase tracking-widest text-white font-bold mb-4">Connect</h4>
+        <div class="flex space-x-4 text-sm text-gray-400">
+          <a href="#" class="hover:text-fashiongold transition"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="hover:text-fashiongold transition"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" class="hover:text-fashiongold transition"><i class="fa-brands fa-pinterest"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 pt-12 mt-12 border-t border-gray-900 text-center text-[10px] uppercase tracking-widest text-gray-600">
+      © 2026 Virtue Fit AI. All Rights Reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
