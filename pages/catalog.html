@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atelier Catalog | Virtue Fit</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            fashiongold: '#D4AF37',
+            darkplum: '#120913',
+            cardplum: '#1C101E'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body class="bg-darkplum font-sans text-white min-h-screen pb-20">
+
+  <!-- Navigation Bar -->
+  <nav class="bg-darkplum/90 backdrop-blur-md sticky top-0 z-50 border-b border-gray-800 shadow-xl">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8">
+      <div class="flex justify-between h-20 items-center">
+        <a href="../index.html" class="flex items-center space-x-2 text-xl tracking-[0.3em] font-light uppercase text-white hover:opacity-90 transition">
+          <span class="font-bold text-fashiongold border-l-2 border-fashiongold pl-3 py-0.5 leading-none">VIRTUE</span>
+          <span class="font-extralight text-gray-300">FIT</span>
+        </a>
+        <div class="hidden md:flex items-center space-x-8 text-xs uppercase tracking-[0.2em] font-medium text-gray-300">
+          <a href="../index.html" class="hover:text-fashiongold transition">Home</a>
+          <a href="./about.html" class="hover:text-fashiongold transition">About</a>
+          <a href="./catalog.html" class="text-fashiongold font-bold hover:text-fashiongold transition">Catalog</a>
+          <a href="./contact.html" class="hover:text-fashiongold transition">Contact</a>
+        </div>
+        <div class="hidden md:flex items-center space-x-4">
+          <a href="./login.html" class="text-xs uppercase tracking-widest text-gray-300 font-semibold px-4 py-2 hover:text-fashiongold transition">Sign In</a>
+          <a href="./signup.html" class="px-6 py-2.5 bg-fashiongold text-black text-xs uppercase tracking-widest font-bold border border-fashiongold hover:bg-black hover:text-fashiongold transition duration-300">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Title Banner -->
+  <section class="py-12 border-b border-gray-800 bg-cardplum/30 text-center">
+    <p class="text-xs font-bold uppercase tracking-[0.2em] text-fashiongold mb-2">Curated Collections</p>
+    <h1 class="text-3xl font-light uppercase tracking-tight">Virtue Fit Garment Studio</h1>
+  </section>
+
+  <main class="max-w-7xl mx-auto px-6 sm:px-8 py-10 space-y-12">
+
+    <!-- ADD FORM & SEARCH FILTERS -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      
+      <!-- ADD FORM -->
+      <div class="lg:col-span-4 bg-cardplum border border-gray-800 p-6 shadow-xl">
+        <h2 class="text-sm uppercase font-bold tracking-widest text-fashiongold mb-4 border-b border-gray-800 pb-2">
+          <i class="fa-solid fa-plus-circle mr-2"></i>Add Custom Garment
+        </h2>
+        <form id="add-garment-form" class="space-y-4">
+          <div>
+            <label class="block text-[10px] uppercase tracking-widest text-gray-400 mb-1">Garment Title</label>
+            <input type="text" id="add-name" required class="w-full bg-darkplum border border-gray-800 text-xs text-white p-2.5 focus:border-fashiongold outline-none" placeholder="Silk Trench Coat">
+          </div>
+          <div>
+            <label class="block text-[10px] uppercase tracking-widest text-gray-400 mb-1">Category</label>
+            <select id="add-category" class="w-full bg-darkplum border border-gray-800 text-xs text-white p-2.5 focus:border-fashiongold outline-none">
+              <option value="Haute Couture">Haute Couture</option>
+              <option value="Streetwear">Streetwear</option>
+              <option value="Evening Wear">Evening Wear</option>
+              <option value="Casual">Casual</option>
+              <option value="Footwear">Footwear</option>
+            </select>
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-[10px] uppercase tracking-widest text-gray-400 mb-1">Price ($)</label>
+              <input type="number" id="add-price" required min="1" class="w-full bg-darkplum border border-gray-800 text-xs text-white p-2.5 focus:border-fashiongold outline-none" placeholder="450">
+            </div>
+            <div>
+              <label class="block text-[10px] uppercase tracking-widest text-gray-400 mb-1">Fit Accuracy (%)</label>
+              <input type="number" id="add-score" required min="50" max="100" class="w-full bg-darkplum border border-gray-800 text-xs text-white p-2.5 focus:border-fashiongold outline-none" placeholder="98">
+            </div>
+          </div>
+          <div>
+            <label class="block text-[10px] uppercase tracking-widest text-gray-400 mb-1">Image URL</label>
+            <input type="url" id="add-image" required class="w-full bg-darkplum border border-gray-800 text-xs text-white p-2.5 focus:border-fashiongold outline-none" placeholder="https://images.unsplash.com/...">
+          </div>
+          <button type="submit" class="w-full py-3 bg-fashiongold text-black text-xs uppercase font-bold tracking-widest hover:bg-yellow-400 transition">
+            Add To Catalog
+          </button>
+        </form>
+      </div>
+
+      <!-- SEARCH BAR & FILTER BUTTONS -->
+      <div class="lg:col-span-8 space-y-6">
+        <div class="bg-cardplum border border-gray-800 p-6 shadow-xl space-y-4">
+          <h2 class="text-sm uppercase font-bold tracking-widest text-fashiongold border-b border-gray-800 pb-2">
+            <i class="fa-solid fa-filter mr-2"></i>Filter Collections
+          </h2>
+          
+          <input type="text" id="search-input" placeholder="SEARCH BY NAME OR CATEGORY..." class="w-full bg-darkplum border border-gray-800 text-xs text-white p-3 focus:border-fashiongold outline-none tracking-widest">
+
+          <!-- 5 Filter Buttons -->
+          <div class="flex flex-wrap gap-2 pt-2">
+            <button onclick="filterCategory('All')" class="filter-btn active px-4 py-2 border border-fashiongold bg-fashiongold text-black text-[10px] uppercase font-bold tracking-widest">All Items</button>
+            <button onclick="filterCategory('Haute Couture')" class="filter-btn px-4 py-2 border border-gray-800 bg-darkplum text-gray-300 text-[10px] uppercase font-bold tracking-widest hover:border-fashiongold">Haute Couture</button>
+            <button onclick="filterCategory('Streetwear')" class="filter-btn px-4 py-2 border border-gray-800 bg-darkplum text-gray-300 text-[10px] uppercase font-bold tracking-widest hover:border-fashiongold">Streetwear</button>
+            <button onclick="filterCategory('Evening Wear')" class="filter-btn px-4 py-2 border border-gray-800 bg-darkplum text-gray-300 text-[10px] uppercase font-bold tracking-widest hover:border-fashiongold">Evening Wear</button>
+            <button onclick="filterCategory('Casual')" class="filter-btn px-4 py-2 border border-gray-800 bg-darkplum text-gray-300 text-[10px] uppercase font-bold tracking-widest hover:border-fashiongold">Casual</button>
+          </div>
+        </div>
+
+        <div class="bg-cardplum/50 border border-gray-800 p-4 flex justify-between items-center text-xs">
+          <div>
+            <span class="text-fashiongold font-bold uppercase tracking-widest">Total Inventory:</span>
+            <span id="garment-count" class="text-white font-bold ml-1">0</span>
+          </div>
+          <div>
+            <span class="text-fashiongold font-bold uppercase tracking-widest">Filtered Display:</span>
+            <span id="filtered-count" class="text-white font-bold ml-1">0</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- GRID CARDS DISPLAY -->
+    <section>
+      <div class="flex justify-between items-center mb-6 border-b border-gray-800 pb-3">
+        <h2 class="text-lg font-light uppercase tracking-tight">Explore Collection</h2>
+        <span class="text-xs text-fashiongold uppercase tracking-widest">Real-Time Interactive View</span>
+      </div>
+
+      <div id="garment-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Cards injected dynamically via JS -->
+      </div>
+    </section>
+
+    <!-- ANALYTICS SECTION -->
+    <section class="border-t border-gray-800 pt-12 space-y-8">
+      <div class="text-center max-w-xl mx-auto">
+        <p class="text-xs font-bold uppercase tracking-[0.2em] text-fashiongold mb-1">System Intelligence</p>
+        <h2 class="text-2xl font-light uppercase tracking-tight">Atelier Analytics Engine</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Table Output -->
+        <div class="bg-cardplum border border-gray-800 p-5 space-y-4">
+          <h3 class="text-xs font-bold uppercase tracking-widest text-fashiongold border-b border-gray-800 pb-2">
+            <i class="fa-solid fa-list-check mr-2"></i>Inventory Registry
+          </h3>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-[10px] text-gray-300">
+              <thead class="bg-darkplum uppercase text-fashiongold">
+                <tr>
+                  <th class="p-2">#</th>
+                  <th class="p-2">Item</th>
+                  <th class="p-2">Category</th>
+                </tr>
+              </thead>
+              <tbody id="for-loop-table-body" class="divide-y divide-gray-800">
+                <!-- Generated by for loop -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Buffer Output -->
+        <div class="bg-cardplum border border-gray-800 p-5 space-y-4">
+          <h3 class="text-xs font-bold uppercase tracking-widest text-fashiongold border-b border-gray-800 pb-2">
+            <i class="fa-solid fa-spinner mr-2"></i>Real-Time Render Pipeline
+          </h3>
+          <p class="text-[10px] text-gray-400">Queue processing status for active 3D avatar meshes:</p>
+          <ul id="while-loop-output" class="space-y-2 text-[11px] font-mono text-gray-300 bg-darkplum p-3 border border-gray-800 h-40 overflow-y-auto">
+            <!-- Generated by while loop -->
+          </ul>
+        </div>
+
+        <!-- Logic Breakdown Output -->
+        <div class="bg-cardplum border border-gray-800 p-5 space-y-4">
+          <h3 class="text-xs font-bold uppercase tracking-widest text-fashiongold border-b border-gray-800 pb-2">
+            <i class="fa-solid fa-tags mr-2"></i>Fit & Price Analysis
+          </h3>
+          <div id="combined-logic-output" class="space-y-2 text-xs text-gray-300 bg-darkplum p-3 border border-gray-800 h-40 overflow-y-auto">
+            <!-- Generated by loop + conditions -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- EDIT MODAL FORM -->
+  <div id="edit-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center z-50 p-4">
+    <div class="bg-cardplum border border-fashiongold p-6 max-w-md w-full shadow-2xl">
+      <h3 class="text-sm font-bold uppercase tracking-widest text-fashiongold mb-4 border-b border-gray-800 pb-2">
+        <i class="fa-solid fa-pen-to-square mr-2"></i>Modify Garment Details
+      </h3>
+      <form id="edit-garment-form" class="space-y-4">
+        <input type="hidden" id="edit-id">
+        <div>
+          <label class="block text-[10px] uppercase tracking-widest text-gray-400 mb-1">Title</label>
+          <input type="text" id="edit-name" required class="w-full bg-darkplum border border-gray-800 text-xs text-white p-2.5 focus:border-fashiongold outline-none">
+        </div>
+        <div>
+          <label class="block text-[10px] uppercase tracking-widest text-gray-400 mb-1">Category</label>
+          <select id="edit-category" class="w-full bg-darkplum border border-gray-800 text-xs text-white p-2.5 focus:border-fashiongold outline-none">
+            <option value="Haute Couture">Haute Couture</option>
+            <option value="Streetwear">Streetwear</option>
+            <option value="Evening Wear">Evening Wear</option>
+            <option value="Casual">Casual</option>
+            <option value="Footwear">Footwear</option>
+          </select>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-[10px] uppercase tracking-widest text-gray-400 mb-1">Price ($)</label>
+            <input type="number" id="edit-price" required class="w-full bg-darkplum border border-gray-800 text-xs text-white p-2.5 focus:border-fashiongold outline-none">
+          </div>
+          <div>
+            <label class="block text-[10px] uppercase tracking-widest text-gray-400 mb-1">Fit Accuracy (%)</label>
+            <input type="number" id="edit-score" required class="w-full bg-darkplum border border-gray-800 text-xs text-white p-2.5 focus:border-fashiongold outline-none">
+          </div>
+        </div>
+        <div class="flex space-x-3 pt-2">
+          <button type="submit" class="flex-1 py-3 bg-fashiongold text-black text-xs uppercase font-bold tracking-widest hover:bg-yellow-400 transition">Save Changes</button>
+          <button type="button" onclick="closeEditModal()" class="flex-1 py-3 border border-gray-700 text-gray-300 text-xs uppercase font-bold tracking-widest hover:bg-darkplum transition">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    let garments = [
+      {
+        id: 1,
+        name: "Monochrome Tailored Blazer",
+        category: "Haute Couture",
+        price: 850,
+        score: 98,
+        inStock: true,
+        image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=800"
+      },
+      {
+        id: 2,
+        name: "Silk Runway Evening Gown",
+        category: "Evening Wear",
+        price: 1200,
+        score: 99,
+        inStock: true,
+        image: "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=800"
+      },
+      {
+        id: 3,
+        name: "Oversized Cyber Street Trench",
+        category: "Streetwear",
+        price: 420,
+        score: 94,
+        inStock: false,
+        image: "https://images.unsplash.com/photo-1488161628813-04466f872be2?auto=format&fit=crop&q=80&w=800"
+      },
+      {
+        id: 4,
+        name: "Cashmere Atelier Pullover",
+        category: "Casual",
+        price: 310,
+        score: 96,
+        inStock: true,
+        image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=800"
+      }
+    ];
+
+    let currentFilter = 'All';
+
+    function evaluateGarmentStatus(item) {
+      let accuracyBadge = "";
+      if (item.score >= 98) {
+        accuracyBadge = `<span class="bg-fashiongold text-black text-[9px] px-2 py-0.5 font-bold uppercase">Perfect Mesh</span>`;
+      } else if (item.score >= 95) {
+        accuracyBadge = `<span class="bg-gray-800 text-fashiongold border border-fashiongold/50 text-[9px] px-2 py-0.5 font-bold uppercase">High Precision</span>`;
+      } else {
+        accuracyBadge = `<span class="bg-darkplum text-gray-400 text-[9px] px-2 py-0.5 font-bold uppercase">Standard Fit</span>`;
+      }
+
+      let priceTier = "";
+      if (item.price > 800) {
+        priceTier = "Couture Tier";
+      } else if (item.price > 400) {
+        priceTier = "Atelier Tier";
+      } else {
+        priceTier = "Ready-To-Wear";
+      }
+
+      let stockStatus = "";
+      if (item.inStock === true) {
+        stockStatus = `<span class="text-emerald-400 text-[10px] font-bold"><i class="fa-solid fa-circle text-[7px] mr-1"></i>Available</span>`;
+      } else {
+        stockStatus = `<span class="text-rose-500 text-[10px] font-bold"><i class="fa-solid fa-circle text-[7px] mr-1"></i>Backorder</span>`;
+      }
+
+      return { accuracyBadge, priceTier, stockStatus };
+    }
+
+    function renderGridCards() {
+      const grid = document.getElementById('garment-grid');
+      const searchTerm = document.getElementById('search-input').value.toLowerCase();
+
+      const filtered = garments.filter(item => {
+        const matchesCategory = (currentFilter === 'All') || (item.category === currentFilter);
+        const matchesSearch = item.name.toLowerCase().includes(searchTerm) || item.category.toLowerCase().includes(searchTerm);
+        return matchesCategory && matchesSearch;
+      });
+
+      document.getElementById('garment-count').innerText = garments.length;
+      document.getElementById('filtered-count').innerText = filtered.length;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `<div class="col-span-full text-center py-12 text-gray-500 text-xs uppercase tracking-widest border border-gray-800 bg-cardplum">No matching garments found in collection.</div>`;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(item => {
+        const status = evaluateGarmentStatus(item);
+
+        return `
+          <div class="border border-gray-800 bg-cardplum overflow-hidden flex flex-col justify-between group shadow-lg">
+            <div>
+              <div class="relative h-64 overflow-hidden">
+                <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                <div class="absolute top-3 left-3">${status.accuracyBadge}</div>
+                <div class="absolute top-3 right-3 bg-darkplum/90 border border-gray-800 px-2 py-1 text-[10px] uppercase font-bold text-fashiongold">${item.category}</div>
+              </div>
+              <div class="p-5 space-y-3">
+                <div class="flex justify-between items-start">
+                  <h3 class="text-sm font-bold uppercase tracking-wide text-white">${item.name}</h3>
+                  <span class="text-xs text-fashiongold font-serif font-bold">$${item.price}</span>
+                </div>
+                <div class="flex justify-between items-center text-[10px] text-gray-400 border-t border-gray-800/80 pt-3">
+                  <span>Tier: <strong class="text-gray-200 uppercase">${status.priceTier}</strong></span>
+                  <span>Fit Score: <strong class="text-fashiongold">${item.score}%</strong></span>
+                </div>
+                <div class="pt-1">${status.stockStatus}</div>
+              </div>
+            </div>
+
+            <div class="p-4 border-t border-gray-800 bg-darkplum/50 flex space-x-2">
+              <button onclick="openEditModal(${item.id})" class="flex-1 py-2 border border-gray-700 text-gray-300 text-[10px] uppercase font-bold tracking-widest hover:border-fashiongold hover:text-fashiongold transition">
+                <i class="fa-solid fa-pen mr-1"></i>Edit
+              </button>
+              <button onclick="deleteGarment(${item.id})" class="flex-1 py-2 border border-rose-900/50 text-rose-400 text-[10px] uppercase font-bold tracking-widest hover:bg-rose-950 transition">
+                <i class="fa-solid fa-trash mr-1"></i>Delete
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      runLoopDemonstrations();
+    }
+
+    document.getElementById('add-garment-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const newObject = {
+        id: Date.now(),
+        name: document.getElementById('add-name').value,
+        category: document.getElementById('add-category').value,
+        price: Number(document.getElementById('add-price').value),
+        score: Number(document.getElementById('add-score').value),
+        inStock: true,
+        image: document.getElementById('add-image').value
+      };
+
+      garments.push(newObject);
+      renderGridCards();
+      this.reset();
+    });
+
+    function deleteGarment(id) {
+      if (confirm("Are you sure you want to remove this garment from the collection?")) {
+        garments = garments.filter(item => item.id !== id);
+        renderGridCards();
+      }
+    }
+
+    function openEditModal(id) {
+      const item = garments.find(g => g.id === id);
+      if (!item) return;
+
+      document.getElementById('edit-id').value = item.id;
+      document.getElementById('edit-name').value = item.name;
+      document.getElementById('edit-category').value = item.category;
+      document.getElementById('edit-price').value = item.price;
+      document.getElementById('edit-score').value = item.score;
+
+      document.getElementById('edit-modal').classList.remove('hidden');
+    }
+
+    function closeEditModal() {
+      document.getElementById('edit-modal').classList.add('hidden');
+    }
+
+    document.getElementById('edit-garment-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const id = Number(document.getElementById('edit-id').value);
+
+      garments = garments.map(item => {
+        if (item.id === id) {
+          return {
+            ...item,
+            name: document.getElementById('edit-name').value,
+            category: document.getElementById('edit-category').value,
+            price: Number(document.getElementById('edit-price').value),
+            score: Number(document.getElementById('edit-score').value)
+          };
+        }
+        return item;
+      });
+
+      closeEditModal();
+      renderGridCards();
+    });
+
+    function filterCategory(cat) {
+      currentFilter = cat;
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('bg-fashiongold', 'text-black');
+        btn.classList.add('bg-darkplum', 'text-gray-300');
+      });
+      event.target.classList.remove('bg-darkplum', 'text-gray-300');
+      event.target.classList.add('bg-fashiongold', 'text-black');
+      renderGridCards();
+    }
+
+    document.getElementById('search-input').addEventListener('input', renderGridCards);
+
+    function runLoopDemonstrations() {
+      const tableBody = document.getElementById('for-loop-table-body');
+      tableBody.innerHTML = "";
+      for (let i = 0; i < garments.length; i++) {
+        tableBody.innerHTML += `
+          <tr>
+            <td class="p-2 font-bold text-fashiongold">0${i+1}</td>
+            <td class="p-2 uppercase font-semibold text-white">${garments[i].name}</td>
+            <td class="p-2 uppercase text-gray-400">${garments[i].category}</td>
+          </tr>
+        `;
+      }
+
+      const whileOutput = document.getElementById('while-loop-output');
+      whileOutput.innerHTML = "";
+      let index = 0;
+      while (index < garments.length) {
+        whileOutput.innerHTML += `<li class="border-b border-gray-800 pb-1"> Processing Mesh [${index+1}]: ${garments[index].name} ... READY</li>`;
+        index++;
+      }
+
+      const combinedOutput = document.getElementById('combined-logic-output');
+      combinedOutput.innerHTML = "";
+      for (let j = 0; j < garments.length; j++) {
+        let categoryClass = "";
+        if (garments[j].price > 800) {
+          categoryClass = "text-fashiongold font-bold";
+        } else if (garments[j].score > 95) {
+          categoryClass = "text-emerald-400 font-bold";
+        } else {
+          categoryClass = "text-gray-400";
+        }
+
+        combinedOutput.innerHTML += `
+          <div class="border-b border-gray-800 pb-1 flex justify-between">
+            <span>${garments[j].name}</span>
+            <span class="${categoryClass}">$${garments[j].price}</span>
+          </div>
+        `;
+      }
+    }
+
+    renderGridCards();
+  </script>
+</body>
+</html>
